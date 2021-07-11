@@ -19,3 +19,765 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-style: 1.6rem;
 }
+
+//nav
+.burger-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 1000;
+
+    &:focus {
+        outline: none;
+        border: 1px solid rbga(255, 255, 255, .5);
+        border-radius: 8px;
+    }
+
+    &:hover {
+
+        .burger-btn__bars::after,
+        .burger-btn__bars::before {
+            width: 100%;
+        }
+
+    }
+
+    &__box {
+        position: relative;
+        width: 40px;
+        height: 30px;
+    }
+
+    &__bars,
+    &__bars::after,
+    &__bars::before {
+        @include burgerBtn;
+    }
+
+    &__bars {
+        width: 100%;
+
+        &::after {
+            top: 13px;
+            width: 60%;
+        }
+
+        &::before {
+            top: 27px;
+            width: 30%;
+            transition-delay: .1s;
+        }
+    }
+}
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+    background-color: #2e2e2e;
+}
+
+//header
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    height: 85vh;
+    text-align: center;
+    @include heroImages ('/img/1-mini.png');
+    background-attachment: scroll;
+
+    &__heading {
+        font-family: 'Zen Loop';
+        font-size: 3.8rem;
+        letter-spacing: 0.35rem;
+
+    }
+
+    &__text {
+        font-size: 1.2rem;
+    }
+
+    &__btn {
+        margin-top: 2rem;
+        padding: 0.8rem 1.6rem;
+        background: $pure-white;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 3px;
+        color: $dark;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &::before {
+            background-color: $light-white;
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(100%);
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-image: $blue-gradient-solid;
+    letter-spacing: 0.25rem;
+    z-index: 100;
+
+    &--active {
+        transform: translateX(0);
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        margin: 0.5em 0;
+        padding: 0.5em 2em;
+        color: $dark;
+        font-size: 2rem;
+        text-decoration: none;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 70%;
+            transform: scaleY(0);
+            background-color: $dark;
+            transition: transform .3s;
+            content: '';
+        }
+
+        &:hover::before {
+            transform: scaleY(1);
+        }
+    }
+}
+
+/// ABOUT
+.about {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: 0rem 1rem;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 5px 5px 10px #2e2e2e2e;
+        transition: transform .3s;
+
+        &:hover {
+            transform: scale(.95);
+        }
+    }
+
+    &__title {
+        margin: 1em 0em;
+        font-size: 1.6rem;
+    }
+
+    &__text {
+        font-size: 1.3rem;
+    }
+}
+
+///HERO-IMG
+.hero-img {
+    position: relative;
+    padding: 10em 2em;
+    @include heroImages("/img/hero-img.png");
+    text-align: center;
+    color: $pure-white;
+    overflow: hidden;
+
+    hr {
+        margin: 0 auto;
+        width: 90%;
+        border-style: solid;
+    }
+
+    &__title {
+        font-family: 'Zen Loop';
+        font-size: 3.8rem;
+        letter-spacing: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        padding: 2rem 4.5rem;
+    }
+}
+
+
+///PRODUCTS
+.products {
+    &__card {
+        position: relative;
+        margin: 1em 0;
+        height: 450px;
+        color: $pure-white;
+        text-align: center;
+        perspective: 1000px;
+
+        &:hover {
+            .products__card-img {
+                transform: rotateY(-180deg);
+                opacity: 0;
+            }
+
+            .products__card-info {
+                transform: rotateY(0);
+                opacity: 1;
+            }
+        }
+
+        &-img {
+            padding: 2em;
+            height: 100%;
+            border-radius: 3px;
+            background-size: cover;
+            transition: transform 1s;
+
+            &--first {
+                background-image: $blue-gradient, url('/img/product1.png');
+                background-position: top;
+            }
+
+            &--second {
+                background-image: $light-blue-gradient, url('/img/product2.png');
+            }
+
+            &--third {
+                background-image: $light-blue-gradient, url('/img/product3.png');
+            }
+
+            &-title {
+                font-family: 'Zen Loop';
+                font-size: 2.5rem;
+            }
+
+            &-info {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                font-size: 1.6rem;
+
+                i {
+                    margin-right: 0.5em;
+                }
+            }
+        }
+
+        &-info {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 5px;
+            background-image: $light-blue-gradient-solid;
+            opacity: 0;
+            transform: rotateY(180deg);
+            transition: transform 1s, opacity 1s;
+
+            &-title {
+                @include productsStyleCard;
+                font-family: 'Zen Loop';
+                font-size: 2.5rem;
+                top: 0.75em;
+                width: 100%;
+            }
+
+            &-list {
+                margin: 0 auto;
+                width: 70%;
+                list-style: none;
+
+                &-item {
+                    padding: 0.5em;
+                    font-size: 1.2rem;
+                    border-bottom: 1px solid $light-white;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            &-btn {
+                @include productsStyleCard;
+                bottom: 2em;
+                padding: 1em;
+                border-radius: 5px;
+                width: 80%;
+                border: none;
+                background-color: $main-color;
+                color: $pure-white;
+                cursor: pointer;
+
+                &::before {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+///blog
+.blog {
+    position: relative;
+    overflow: hidden;
+    @include heroImages('/img/16.png');
+
+    .section-heading {
+        color: $pure-white;
+    }
+
+    &__option {
+        margin: 1em 0;
+        box-shadow: 5px 5px 10px #2e2e2e2e;
+        background-color: $pure-white;
+        overflow: hidden;
+
+        &-img {
+            width: 100%;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        &-info {
+            padding: 2em;
+            background-color: $pure-white;
+            z-index: 10;
+        }
+
+        &-heading {
+            margin-bottom: 0.5em;
+            font-size: 1.4rem;
+        }
+
+        &-text {
+            margin-bottom: 0.5em;
+            font-size: 1rem;
+            color: $dark;
+        }
+
+        &-btn {
+            margin-top: 1em;
+            padding: 0.8em;
+            width: 100%;
+            color: $pure-white;
+            background-color: $main-color;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+
+            &::before {
+                background-color: $secondary-color;
+            }
+        }
+    }
+}
+
+///REVIEWS
+@media(max-width: 767px) {
+    .reviews .section-padding {
+        padding: 6em 0;
+    }
+}
+
+.reviews {
+    &__box {
+        position: relative;
+        margin: 2em;
+        padding: 2em;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px #2e2e2e2e;
+        transition: transform .3s;
+
+        &:hover {
+            transform: scale(0.96);
+        }
+    }
+
+    &__box-img {
+        position: absolute;
+        top: 13%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__box-quote {
+        margin-bottom: 1.3em;
+        font-size: 1.7rem;
+        color: $orange-color;
+    }
+
+    &__box-text {
+        margin-bottom: 1em;
+        font-size: 1.3rem;
+        color: $dark;
+    }
+}
+
+
+//CONTACT
+.contact {
+    position: relative;
+    background-color: $light-white;
+    overflow: hidden;
+
+    .white-block-left {
+        background-color: $orange-second-color
+    }
+
+    &__form,
+    &__form-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-label {
+        margin-bottom: 1em;
+        font-size: 1.3rem;
+    }
+
+    &__form-input {
+        @include contactForm
+    }
+
+    &__form-textarea {
+        @include contactForm;
+
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 150px;
+    }
+
+    &__form-btn {
+        align-self: flex-end;
+        padding: 1em;
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+        color: $pure-white;
+        background-color: $main-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &::before {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+
+//FOOTER
+.footer {
+    background-image: $orange-gradient-solid;
+    color: $pure-white;
+
+    .wrapper {
+        padding: 6em 2em 2em;
+    }
+
+    &__box {
+        font-size: 1.2rem;
+    }
+
+    &__box-desktop {
+        display: none;
+    }
+
+    &__box-title {
+        font-family: 'Zen Loop';
+        margin-bottom: 1em;
+        font-size: 2rem;
+        letter-spacing: 0.25rem;
+    }
+
+    &__box-social {
+        margin: 2em 0 1em;
+    }
+
+    &__box-link {
+        color: $pure-white;
+        font-size: 2.5rem;
+        padding: 0 0.4em;
+        text-decoration: none;
+        transition: color .3s;
+
+        &:hover {
+            color: $secondary-color
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &__bottom-text {
+            padding: 2em;
+            text-align: center;
+        }
+    }
+
+    hr {
+        border: 1px solid $pure-white;
+    }
+
+    &__bottom-text {
+        text-align: center;
+        padding-top: 1em;
+    }
+}
+
+///=================== MEDIA ======================\\\
+@media (min-width: 576px) {}
+
+
+@media (min-width: 768px) {
+
+    .white-block {
+        height: 50px;
+        width: 50%;
+    }
+
+    .header {
+        &__heading {
+            font-size: 5.6rem;
+            letter-spacing: 1rem;
+        }
+
+        &__text {
+            font-size: 2rem;
+        }
+
+        &__btn {
+            font-size: 1.4rem;
+        }
+    }
+
+    .about {
+        &__box {
+            flex-direction: row;
+            justify-content: space-between;
+
+            &-text {
+                width: 55%;
+                padding: 0 1em;
+
+                &--right {
+                    text-align: right;
+                }
+            }
+
+            &-img {
+
+                &--right {
+                    order: 1;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.6rem;
+        }
+
+        &__text {
+            font-size: 1.1rem;
+
+        }
+
+        &__img {
+            margin-bottom: 0;
+            min-height: 300px;
+        }
+    }
+
+
+    .hero-img {
+        padding: 15rem 2rem;
+
+        &__text {
+            font-size: 2rem;
+        }
+    }
+
+    .products {
+        &__cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &__card {
+            margin: 1em;
+            width: 45%;
+        }
+    }
+
+    .blog {
+        &__option {
+            display: flex;
+            margin: 2em 0;
+            width: 100%;
+
+            &-img {
+                width: 60%;
+                height: auto;
+
+                &--right {
+                    order: 1;
+                }
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &-heading {
+                margin-bottom: 0.5em;
+                font-size: 1.3rem;
+            }
+
+            &-btn {
+                padding: 1em;
+            }
+
+            &-heading {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .footer {
+        &__boxes {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__box-desktop {
+            display: block;
+        }
+
+        &__box {
+            margin: 0 2em;
+            width: 25%;
+
+            &:first-child {
+                width: 50%;
+            }
+        }
+
+        &__box-title {
+            font-size: 2rem;
+        }
+
+        &__box-list {
+            list-style: none;
+        }
+
+        &__box-list-item {
+            margin-bottom: 1em;
+
+            a {
+                color: $light-white;
+                text-decoration: none;
+                cursor: pointer;
+                transition: color .3s;
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .burger-btn {
+        top: 30px;
+        right: 30px;
+    }
+
+    .header {
+        background-image: $blue-gradient url('/img/1.png');
+    }
+
+    .nav {
+        &__item {
+            font-size: 2.5rem;
+            letter-spacing: 0.35rem;
+        }
+    }
+
+    .about {
+        &__box {
+            margin: 3em 0;
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__title {
+            font-size: 2.2rem;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+        }
+    }
+
+    .products {
+        &__card {
+            width: 300px;
+        }
+    }
+
+    .blog {
+        &__option {
+            &-img {
+                object-fit: cover;
+                height: 300px;
+            }
+
+            &-text {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

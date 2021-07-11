@@ -1,21 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>naturally</title>
+    <title>Eco Cosmetics Black Lotus</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/327a0d490c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
     <link rel="stylesheet" href="/css/main.css">
 
 </head>
+
 <body>
-    
+    <button class="burger-btn">
+        <div class="burger-btn__box">
+            <div class="burger-btn__bars"></div>
+        </div>
+    </button>
+
+    <nav class="nav">
+        <div class="nav__items">
+            <a href="#products" class="nav__item" onclick="deleteAnimation()">Products</a>
+            <a href="#blog" class="nav__item" onclick="deleteAnimation()">Enrich your skin care</a>
+            <a href="#reviews" class="nav__item" onclick="deleteAnimation()">Reviews</a>
+            <a href="#contact" class="nav__item" onclick="deleteAnimation()">Contact</a>
+        </div>
+    </nav>
+
+    <header class="header section">
+        <h1 class="header__heading">Eco Cosmetics Black Lotus</h1>
+        <p class="header__text">A real masterpiece of art of mother nature.</p>
+        <a href="#products" class="header__btn btn-special-animation">See our offer!</a>
+        <div class="white-block white-block-left"></div>
+    </header>
+
+    <main class="main">
+
+
+        <section class="about section-padding section white-section">
+            <div class="wrapper">
+                <h2 class="section-heading">Our philosophy</h2>
+                <div class="about__box">
+                    <div class="about__box-img">
+                        <img src="img/5.png" alt="Clay and woman" class="about__img">
+                    </div>
+                    <div class="about__box-text">
+                        <h3 class="about__title">From love for beauty.</h3>
+                        <p class="about__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat, dolorum atque
+                            repudiandae, temporibus voluptates saepe delectus rem optio suscipit voluptas autem iure et
+                            deleniti quaerat debitis quisquam illo consequatur?
+                        </p>
+                    </div>
+                </div>
+                <div class="about__box">
+                    <div class="about__box-img about__box-img--right">
+                        <img src="img/6.png" alt="Gel" class="about__img">
+                    </div>
+                    <div class="about__box-text about__box-text--right">
+                        <h3 class="about__title">Care for details</h3>
+                        <p class="about__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat, dolorum atque
+                            repudiandae, temporibus voluptates saepe delectus rem optio suscipit voluptas autem iure et
+                            deleniti quaerat debitis quisquam illo consequatur?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-img section">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+            <p class="hero-img__title">Top quality products.</p>
+            <hr>
+            <p class="hero-img__text">High-ecological natural ingredients of dried herbs and vegetables, which are
+                obtained only from proven sources.</p>
+            <hr>
+        </section>
+
+        <section class="products section-padding section white-section" id="products">
+            <div class="wrapper">
+                <h2 class="section-heading">Our best cosmetic's lines</h2>
+                <div class="products__cards">
+
+                    <div class="products__card" onclick="void(0)">
+                        <div class="products__card-img products__card-img--second">
+                            <h3 class="products__card-img-title">Anti-aging</h3>
+                            <p class="products__card-img-info"><i class="fas fa-angle-double-right"></i>More
+                                information.</i>
+                            </p>
+                        </div>
+                        <div class="products__card-info">
+                            <h3 class="products__card-info-title">Anti-aging</h3>
+                            <ul class="products__card-info-list">
+                                <li class="products__card-info-list-item">Reduces fine lines.</li>
+                                <li class="products__card-info-list-item">Repairs and rejuvenates your skin.</li>
+                                <li class="products__card-info-list-item">Reduces capillary penetrability.</li>
+                                <li class="products__card-info-list-item">Acts by relieving the face muscles.</li>
+                            </ul>
+                            <button class="products__card-info-btn btn-special-animation">Select.</button>
+                        </div>
+                    </div>
+
+                    <div class="products__card" onclick="void(0)">
+                        <div class="products__card-img products__card-img--third">
+                            <h3 class="products__card-img-title">Hand care</h3>
+                            <p class="products__card-img-info"><i class="fas fa-angle-double-right"></i>More
+                                information.</i>
+                            </p>
+                        </div>
+                        <div class="products__card-info">
+                            <h3 class="products__card-info-title">Hand care</h3>
+                            <ul class="products__card-info-list">
+                                <li class="products__card-info-list-item">An uplifting experience in the palm of your
+                                    hand.</li>
+                                <li class="products__card-info-list-item">Blended with natural oils.</li>
+                                <li class="products__card-info-list-item">Perfect for dry and damaged skin.</li>
+                                <li class="products__card-info-list-item">Composition enriched with collagen.</li>
+                            </ul>
+                            <button class="products__card-info-btn btn-special-animation">Select.</button>
+                        </div>
+                    </div>
+
+                    <div class="products__card" onclick="void(0)">
+                        <div class="products__card-img products__card-img--first">
+                            <h3 class="products__card-img-title">After depilation</h3>
+                            <p class="products__card-img-info"><i class="fas fa-angle-double-right"></i>More
+                                information.</i>
+                            </p>
+                        </div>
+                        <div class="products__card-info">
+                            <h3 class="products__card-info-title">After depilation</h3>
+                            <ul class="products__card-info-list">
+                                <li class="products__card-info-list-item">Sweet almond oil helps to soothe irritations.
+                                </li>
+                                <li class="products__card-info-list-item">Exceptionally kind to the sensitive skin.</li>
+                                <li class="products__card-info-list-item">hazel extract calms the skin.</li>
+                                <li class="products__card-info-list-item">Jojoba oil strengthens skin's lipid structure.
+                                </li>
+                            </ul>
+                            <button class="products__card-info-btn btn-special-animation">Select.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog section-padding section" id="blog">
+            <div class="white-block white-block-right"></div>
+            <div class="white-block white-block-left"></div>
+
+            <h2 class="section-heading">Enrich your skin care</h2>
+            <div class="wrapper">
+                <div class="treatments_box">
+
+                    <div class="blog__option">
+                        <img src="img/blog1.png" alt="Cosmetics" class="blog__option-img">
+                        <div class="blog__option-info">
+                            <h3 class="blog__option-heading">You are what you eat.</h3>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                                quis illum inventore tempora neque facere ullam nisi vel vitae vero?</p>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quis?</p>
+                            <button class="blog__option-btn btn-special-animation">More information.</button>
+                        </div>
+                    </div>
+
+                    <div class="blog__option">
+                        <img src="img/blog2.png" alt="Woman's face" class="blog__option-img blog__option-img--right">
+                        <div class="blog__option-info">
+                            <h3 class="blog__option-heading">Face yoga - improve your skin care routine.</h3>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                                quis illum inventore tempora neque facere ullam nisi vel vitae vero?</p>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quis?</p>
+                            <button class="blog__option-btn btn-special-animation">More information.</button>
+                        </div>
+                    </div>
+
+                    <div class="blog__option">
+                        <img src="img/blog3.png" alt="Herbs and tea" class="blog__option-img">
+                        <div class="blog__option-info">
+                            <h3 class="blog__option-heading">Best tips for dry brushing.</h3>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                                quis illum inventore tempora neque facere ullam nisi vel vitae vero?</p>
+                            <p class="blog__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quis?</p>
+                            <button class="blog__option-btn btn-special-animation">More information.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews section-padding section white-section" id="reviews">
+            <h2 class="section-heading">Reviews</h2>
+            <div class="reviews__boxes">
+                <div class="reviews__box">
+                    <div class="reviews__box-img">
+                        <img src="/img/review1.png" alt="Caroline Sosnowsky">
+                    </div>
+                    <div class="reviews__box-info">
+                        <div class="reviews__box-quote"> <i class="fas fa-quote-right"></i> </div>
+                        <p class="reviews__box-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est doloremque dolorum atque
+                            aliquam cupiditate tempore temporibus excepturi quaerat laboriosam dolore.
+                        </p>
+                        <strong>Caroline Sosnowsky</strong>
+                    </div>
+                </div>
+                <div class="reviews__box">
+                    <div class="reviews__box-img">
+                        <img src="/img/review2.png" alt="Anna Deal">
+                    </div>
+                    <div class="reviews__box-info">
+                        <div class="reviews__box-quote"> <i class="fas fa-quote-right"></i> </div>
+                        <p class="reviews__box-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est doloremque dolorum atque
+                            aliquam cupiditate tempore temporibus excepturi quaerat laboriosam dolore.
+                        </p>
+                        <strong>Anna Deal</strong>
+                    </div>
+                </div>
+                <div class="reviews__box">
+                    <div class="reviews__box-img">
+                        <img src="/img/review3.png" alt="Jesica Cry">
+                    </div>
+                    <div class="reviews__box-info">
+                        <div class="reviews__box-quote"> <i class="fas fa-quote-right"></i> </div>
+                        <p class="reviews__box-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est doloremque dolorum atque
+                            aliquam cupiditate tempore temporibus excepturi quaerat laboriosam dolore.
+                        </p>
+                        <strong>Jesica Cry</strong>
+                    </div>
+                </div>
+                <div class="reviews__box">
+                    <div class="reviews__box-img">
+                        <img src="/img/review4.png" alt="Rachel Wed">
+                    </div>
+                    <div class="reviews__box-info">
+                        <div class="reviews__box-quote"> <i class="fas fa-quote-right"></i> </div>
+                        <p class="reviews__box-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est doloremque dolorum atque
+                            aliquam cupiditate tempore temporibus excepturi quaerat laboriosam dolore.
+                        </p>
+                        <strong>Rachel Wed</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact section-padding section white-section">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+            <h2 class="section-heading">Contact</h2>
+            <div class="wrapper">
+                <form class="contact__form">
+                    <div class="contact__form-top">
+                        <label for="name" class="contact__form-label">First and last name:</label>
+                        <input type="text" class="contact__form-input" id="name">
+
+                        <label for="email" class="contact__form-label">E-mail:</label>
+                        <input type="text" class="contact__form-input" id="email">
+                    </div>
+                    <label for="msg" class="contact__form-label">Message:</label>
+                    <textarea id="msg" class="contact__form-textarea"></textarea>
+                    <button type="submit" class="contact__form-btn btn-special-animation">Send us your message.</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__boxes">
+
+                <div class="footer__box">
+                    <h3 class="footer__box-title"><i class="fab fa-pagelines"></i> Black Lotus Co.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae fugit aliquam soluta suscipit
+                        alias placeat blanditiis qui aspernatur mollitia non!</p>
+                    <div class="footer__box-social">
+                        <a href="#" class="footer__box-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">Products</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">Anti-aging</a></li>
+                        <li class="footer__box-list-item"><a href="#">Hand care</a></li>
+                        <li class="footer__box-list-item"><a href="#">After depilation</a></li>
+                        <li class="footer__box-list-item"><a href="#">More products...</a></li>
+                    </ul>
+                </div>
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">About us</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#about">Our philosophy</a></li>
+                        <li class="footer__box-list-item"><a href="#">Team</a></li>
+                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                        <li class="footer__box-list-item"><a href="#">Career</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="footer__bottom-text"> &copy; Eco Cosmetics Black Lotus <span class="footer_year"></span> | Site by
+                Idczak</p>
+        </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="/js/slick.js"></script>
     <script src="/js/script.js"></script>
 </body>
+
 </html>
